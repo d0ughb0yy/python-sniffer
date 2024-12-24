@@ -1,4 +1,4 @@
 # Python Sniffer
 
-A simple sniffer I wrote using Python while learning about sniffers.
+A simple sniffer using Python and learning how network sniffers work.
 It is used for host discovery of a local network.
