@@ -9,7 +9,7 @@ import time
 # target subnet
 SUBNET = '192.168.1.0/24'
 # string that the script will check responses for
-MESSAGE = 'd0ughb0yy scripts python!!'
+MESSAGE = 'd0ughb0yy rulzz!'
 
 class IP:
     def __init__(self, buff=None):
