@@ -106,11 +106,20 @@ class Scanner:
             print('')
             sys.exit()
 
+def get_local_ip():
+    try:
+        # Connect to an external server to get the correct local IP
+        with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
+            s.connect(("8.8.8.8", 80))
+            return s.getsockname()[0]
+    except Exception:
+        return "127.0.0.1" # Fallback if no Internet Connection"
+
 if __name__ == '__main__':
     if len(sys.argv) == 2:
         host = sys.argv[1]
     else:
-        host = '192.168.1.30'
+        host = get_local_ip() # Grabs your local IP to eliminate default value of xx
     s = Scanner(host)
     time.sleep(5)
     t = threading.Thread(target=message_sender)
